@@ -309,9 +309,9 @@ def t_error(t):
             c=t.value[0], p=t.lexpos, a=t.value[0:100]))
 
 
-def lex(text=None):
+def lex(text=None, debug=False):
     kwargs = {}
-    if __debug__:
+    if debug:
         kwargs["debug"] = True
         kwargs["debuglog"] = logging.getLogger(__name__)
     lex = ply.lex.lex(reflags=re.UNICODE, **kwargs)
